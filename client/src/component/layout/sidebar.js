@@ -1,23 +1,58 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
     return (
-        <aside className="bg-dark text-white vh-100 position-fixed" style={{ top: '40px', width: '250px' }}>
-            <ul className="nav flex-column mt-3">
-                <li className="nav-item">
-                    <a className="nav-link text-white" href="#dashboard">Dashboard</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link text-white" href="#profile">Profile</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link text-white" href="#settings">Settings</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link text-white" href="#logout">Logout</a>
-                </li>
-            </ul>
-        </aside>
+        <div
+            style={{
+                position: 'fixed',
+                top: '60px', // Adjust for header height
+                left: '0',
+                width: '250px',
+                height: '100%',
+                backgroundColor: '#f8f9fa',
+                borderRight: '1px solid #dee2e6',
+                padding: '20px',
+            }}
+        >
+            <nav>
+                <ul className="list-unstyled">
+                    <li>
+                        <NavLink
+                            to="/dashboard"
+                            className={({ isActive }) =>
+                                isActive ? 'text-primary fw-bold' : 'text-dark'
+                            }
+                            style={{ textDecoration: 'none', padding: '10px 0', display: 'block' }}
+                        >
+                            Dashboard
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink
+                            to="/users"
+                            className={({ isActive }) =>
+                                isActive ? 'text-primary fw-bold' : 'text-dark'
+                            }
+                            style={{ textDecoration: 'none', padding: '10px 0', display: 'block' }}
+                        >
+                            users
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink
+                            to="/settings"
+                            className={({ isActive }) =>
+                                isActive ? 'text-primary fw-bold' : 'text-dark'
+                            }
+                            style={{ textDecoration: 'none', padding: '10px 0', display: 'block' }}
+                        >
+                            Settings
+                        </NavLink>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     );
 };
 

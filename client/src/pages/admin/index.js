@@ -1,8 +1,8 @@
-const Admin = () =>{
+const AdminDashboard = () =>{
     return(
         <>
             admin 
         </>
     )
 }
-export default Admin;
+export default AdminDashboard;
